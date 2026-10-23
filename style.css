@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px 14px;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #ffe5ef, #f5ddff);
+    color: #70435a;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 30px;
+
+    background: #d94f87;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.25s, background 0.25s;
+}
+
+button:hover {
+    background: #b82e69;
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid #8e315e;
+    outline-offset: 4px;
+}
+
+.birthday-card {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 35px 25px;
+
+    text-align: center;
+    background: #fffdfd;
+    border: 1px solid #ffffff;
+    border-radius: 28px;
+
+    box-shadow: 0 15px 45px rgba(128, 60, 100, 0.15);
+}
+
+.eyebrow {
+    color: #bd5884;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero-heart {
+    color: #e75480;
+    font-size: 55px;
+    animation: heartbeat 1.4s infinite;
+}
+
+h1 {
+    margin: 12px 0;
+    color: #c23b75;
+    font-size: clamp(29px, 6vw, 46px);
+}
+
+h2 {
+    color: #c23b75;
+    font-size: 24px;
+}
+
+h3 {
+    color: #b82e69;
+}
+
+.intro,
+.section-intro {
+    line-height: 1.8;
+}
+
+.cake-area {
+    margin: 32px 0;
+    padding: 24px 12px;
+
+    background: #fff0f6;
+    border-radius: 22px;
+}
+
+.cake {
+    font-size: 82px;
+    animation: cakeBounce 2s infinite;
+}
+
+#cakeMessage {
+    line-height: 1.7;
+}
+
+.secondary-button {
+    background: #a76a96;
+}
+
+.secondary-button:hover {
+    background: #855078;
+}
+
+.section {
+    margin-top: 36px;
+    padding-top: 10px;
+}
+
+.section > p,
+.letter p,
+.final-surprise p {
+    line-height: 1.9;
+}
+
+.letter {
+    margin-top: 22px;
+    padding: 22px;
+
+    background: #fff0f6;
+    border: 1px solid #f8d2e2;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.signature {
+    color: #bd3e78;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.photo-frame {
+    margin: 0;
+    padding: 9px;
+
+    background: white;
+    border: 1px solid #f4d5e3;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(128, 60, 100, 0.08);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-frame figcaption {
+    padding: 10px 2px 4px;
+    color: #9d4c76;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.final-surprise {
+    margin-top: 36px;
+    padding: 24px 16px;
+
+    background: #fff0f6;
+    border-radius: 22px;
+}
+
+#heartMessage {
+    color: #bd3e78;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 35px;
+    color: #98647e;
+    font-size: 13px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    z-index: 10;
+    pointer-events: none;
+
+    animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.16);
+    }
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .birthday-card {
+        padding: 28px 16px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .photo-frame img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffe0ec, #f8b4d9, #e8c7ff);
+}
+
+.welcome-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px 22px;
+  text-align: center;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 10px 35px #d66b9a55;
+}
+
+.welcome-heart {
+  font-size: 55px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.welcome-card h1 {
+  color: #d63384;
+}
+
+.welcome-card p {
+  color: #88516d;
+  line-height: 1.6;
+}
+
+#welcomeScreen button {
+  margin-top: 15px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4f9a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#welcomeScreen button:hover {
+  background: #e83280;
+  transform: scale(1.05);
+}
+
+@keyframes heartbeat {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.welcome-screen.hide {
+  display: none;
+}
+/* PAGE 3: MEMORIES */
+.page3 {
+  min-height: 100vh;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ffdce8, #f6b8d0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page3[hidden] {
+  display: none !important;
+}
+
+.video-card {
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+  padding: 28px;
+  background: #fffdf5;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 8px 30px #c85b7b30;
+}
+
+.video-card .heart {
+  font-size: 45px;
+}
+
+.video-card h1 {
+  color: #cc5078;
+}
+
+.video-card p {
+  color: #795866;
+  line-height: 1.7;
+}
+
+.video-card video {
+  width: 100%;
+  max-height: 65vh;
+  border-radius: 15px;
+  background: #f8dce6;
+  margin: 15px 0;
+}
+
+#backToPage2 {
+  background: #ed597c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 13px 20px;
+  cursor: pointer;
+}
+#page3 {
+  min-height: 100vh;
+  padding: 25px 15px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ffdce8, #f6b8d0);
+  text-align: center;
+}
+
+#page3[hidden] {
+  display: none !important;
+}
+
+.video-card {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background: #fffdf5;
+  color: #c94f79;
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  margin: 20px auto;
+  border-radius: 15px;
+  background: #f5dce5;
+}
+
+#openMemoriesPage,
+#backToPage2 {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ed597c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
